@@ -27,4 +27,31 @@ export function getParam(param) {
   const urlParams = new URLSearchParams(queryString);
   const product = urlParams.get(param);
   return product;
-}
+};
+
+
+export function LoadHeaderFooter() {
+  const templateHead = "/public/partials/header.html";
+  let header = document.querySelector("#mainHeader");
+  LoadData(templateHead, header);
+
+
+  const templateFoot = "/public/partials/footer.html";
+  let footer = document.querySelector("#mainFooter");
+  LoadData(templateFoot, footer);
+
+  LoadSuper();
+};
+
+async function LoadData(path, target) {
+  let data = await fetch(path);
+  let html = await data.text();
+  target.innerHTML = html
+};
+function LoadSuper() {
+  let num = document.querySelector("header");
+  let num2 = num.querySelector("div");
+
+  window.console.log(num);
+  window.console.log(num2);
+};

@@ -1,8 +1,11 @@
 import ProductData from "./ProductData.mjs";
 import ProductDetails from "./ProductDetails.mjs";
-import { setLocalStorage, getParam } from "./utils.mjs";
+import { setLocalStorage, getParam, LoadHeaderFooter, getLocalStorage } from "./utils.mjs";
 
-const dataSource = new ProductData("tents");
+LoadHeaderFooter();
+
+
+const dataSource = new ProductData(getLocalStorage("category"));
 
 const productId = getParam("product");
 
@@ -19,12 +22,14 @@ function addProductToCart(_product) {
 
   setLocalStorage("so-cart", currentCart);
 }
+
 // add to cart button event handler
 async function addToCartHandler(e) {
   // const product = await dataSource.findProductById(e.target.dataset.id);
   let __product = await dataSource.findProductById(e);
   addProductToCart(__product);
 }
+
 try {
   // preventing an error from  showing when on main page
   // add listener to Add to Cart button
@@ -35,5 +40,5 @@ try {
   });
   // console.log(cartButton)
 } catch (error) {
-  console.log("you are on main page");
+  window.console.log(error);
 }

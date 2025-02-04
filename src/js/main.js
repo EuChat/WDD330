@@ -1,3 +1,3 @@
-import ProductData from "./ProductData.mjs";
+import { LoadHeaderFooter} from "./utils.mjs";
 
-let Info = ProductData();
+LoadHeaderFooter();

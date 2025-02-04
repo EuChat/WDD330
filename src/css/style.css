@@ -85,7 +85,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square>div {
+.logo--square > div {
   margin-top: -1.7em;
 }
 
@@ -103,7 +103,6 @@ header {
   top: -50%;
   transform: translate(50%, 50%);
 }
-
 
 /* utility classes */
 .highlight {

@@ -4,7 +4,7 @@ import { getParam, setLocalStorage } from "./utils.mjs";
 
 // let category = "tents";
 let category = getParam("category");
-setLocalStorage("category", category)
+setLocalStorage("category", category);
 let targetList = document.querySelector(".product-list");
 let Info = new ProductData(category);
 let List = new ProductListing(category, Info, targetList);

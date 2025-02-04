@@ -1,9 +1,13 @@
 import ProductData from "./ProductData.mjs";
 import ProductDetails from "./ProductDetails.mjs";
-import { setLocalStorage, getParam, LoadHeaderFooter, getLocalStorage } from "./utils.mjs";
+import {
+  setLocalStorage,
+  getParam,
+  LoadHeaderFooter,
+  getLocalStorage,
+} from "./utils.mjs";
 
 LoadHeaderFooter();
-
 
 const dataSource = new ProductData(getLocalStorage("category"));
 

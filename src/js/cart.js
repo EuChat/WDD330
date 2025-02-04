@@ -12,7 +12,7 @@ function renderCartContents() {
 }
 
 function cartItemTemplate(item) {
-  let newItem = ""
+  let newItem = "";
   newItem = `<li class="cart-card divider">
     <a href="#" class="cart-card__image">
       <img
@@ -63,11 +63,10 @@ subtracter.forEach((element) => {
     let theList = JSON.parse(localStorage.getItem("so-cart")) || [];
     let theItem = theList.find((item) => item.Id == element.value);
     if (theItem.quantity > 1) {
-      theItem.quantity -= 1
+      theItem.quantity -= 1;
       setLocalStorage("so-cart", theList);
       window.location.reload();
     }
-
   });
 });
 
@@ -76,13 +75,11 @@ adder.forEach((element) => {
   element.addEventListener("click", () => {
     let theList = JSON.parse(localStorage.getItem("so-cart")) || [];
     let theItem = theList.find((item) => item.Id == element.value);
-    theItem.quantity += 1
+    theItem.quantity += 1;
     setLocalStorage("so-cart", theList);
     window.location.reload();
-
   });
 });
-
 
 // total for the item
 function findTotal() {
@@ -100,4 +97,3 @@ Clear.addEventListener("click", () => {
   setLocalStorage("so-cart", []);
   window.location.reload();
 });
-
